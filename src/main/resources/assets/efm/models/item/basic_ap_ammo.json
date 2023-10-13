@@ -1,0 +1,7 @@
+{
+    "parent": "cgm:item/basic_bullet",
+	"textures": {
+		"1": "efm:item/basic_ap_ammo",
+		"particle": "cgm:item/basic_bullet"
+	}
+}

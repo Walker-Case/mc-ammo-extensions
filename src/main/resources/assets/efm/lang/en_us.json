@@ -1,0 +1,25 @@
+{
+  "item.efm.basic_ap_ammo": "Basic Armor Penetrating Bullet",
+  "item.efm.basic_bt_ammo": "Basic Explosive Bullet",
+  "item.efm.basic_fmj_ammo": "Basic Full Metal Bullet",
+  "item.efm.basic_inc_ammo": "Basic Incendiary Bullet",
+  "item.efm.basic_frac_ammo" : "Basic Fracturing Bullet",
+
+  "item.efm.advanced_ap_ammo": "Advanced Armor Penetrating Bullet",
+  "item.efm.advanced_bt_ammo": "Advanced Explosive Bullet",
+  "item.efm.advanced_fmj_ammo": "Advanced Full Metal Bullet",
+  "item.efm.advanced_inc_ammo": "Advanced Incendiary Bullet",
+  "item.efm.advanced_frac_ammo": "Advanced Fracturing Bullet",
+
+  "item.efm.shell_buck_ammo": "Buckshot Shell",
+  "item.efm.shell_db_ammo": "Explosive Buckshot Shell",
+  "item.efm.shell_fifty_ammo": ".50cal Ball Shell",
+  "item.efm.shell_inc_ammo": "Incendiary Buckshot Shell",
+  "item.efm.shell_frac_ammo": "Fracturing Birdshot Shell",
+
+  "item.efm.pistol_extended_mag": "Pistol Extended Magazine",
+  "item.efm.drum_mag": "Drum Magazine",
+  "item.efm.fast_mag": "Fast Magazine",
+
+  "enchantment.efm.fracture": "Fracture"
+}

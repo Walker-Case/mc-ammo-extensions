@@ -1,0 +1,17 @@
+{
+  "required": true,
+  "package": "com.walkercase.efm.mixin",
+  "compatibilityLevel": "JAVA_16",
+  "refmap": "efm.refmap.json",
+  "mixins": [
+    "ReloadTrackerMixin",
+    "GunMixin",
+    "ItemStackMixin"
+  ],
+  "client": [
+  ],
+  "minVersion": "0.8",
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

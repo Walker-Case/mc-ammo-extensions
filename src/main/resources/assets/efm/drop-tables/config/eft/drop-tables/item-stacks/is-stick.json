@@ -1,0 +1,8 @@
+{
+  "id":"minecraft:stick",
+
+  "count":{
+    "min":1,
+    "max":3
+  }
+}

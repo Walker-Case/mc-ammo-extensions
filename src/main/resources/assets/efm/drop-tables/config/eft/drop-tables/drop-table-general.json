@@ -1,0 +1,45 @@
+{
+  "containers": [
+    "minecraft.chest"
+  ],
+
+  "items": [
+    {
+      "prefab":"is-stone.json",
+      "rarity": 0.75
+    },
+    {
+      "prefab":"is-bread.json",
+      "rarity": 0.4
+    },
+    {
+      "prefab":"is-stick.json",
+      "rarity": 0.5
+    },
+    {
+      "prefab": "is-wooden-sword.json",
+      "rarity": 0.3
+    },
+    {
+      "prefab": "is-stone-sword.json",
+      "rarity": 0.25
+    },
+    {
+      "prefab": "is-iron-sword.json",
+      "rarity": 0.20
+    },
+    {
+      "prefab": "is-golden-sword.json",
+      "rarity": 0.15
+    },
+    {
+      "prefab": "is-diamond-sword.json",
+      "rarity": 0.10
+    },
+    {
+      "prefab": "is-netherite-sword.json",
+      "rarity": 0.05
+    }
+
+  ]
+}

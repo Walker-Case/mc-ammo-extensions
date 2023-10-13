@@ -1,0 +1,5 @@
+{
+    "exhaustion": 0.10,
+    "message_id": "efm.fracture",
+    "scaling": "when_caused_by_living_non_player"
+}

@@ -1,0 +1,7 @@
+{
+    "parent": "cgm:item/advanced_bullet",
+	"textures": {
+		"1": "efm:item/advanced_frac_ammo",
+		"particle": "cgm:item/advanced_bullet"
+	}
+}

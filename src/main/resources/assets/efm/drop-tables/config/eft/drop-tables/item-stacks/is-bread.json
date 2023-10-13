@@ -1,0 +1,8 @@
+{
+  "id":"minecraft:bread",
+
+  "count":{
+    "min":1,
+    "max":1
+  }
+}
