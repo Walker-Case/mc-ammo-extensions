@@ -7,13 +7,9 @@ import com.walkercase.efm.EFMConfig;
 import com.walkercase.efm.EFMMain;
 import com.walkercase.efm.enchantment.EFMDamageTypes;
 import com.walkercase.efm.enchantment.EFMEnchantments;
-import com.walkercase.efm.item.EFMAmmoEnchant;
 import com.walkercase.efm.item.EFMAmmoWrapper;
 import com.walkercase.efm.item.Magazine;
 import com.walkercase.efm.systems.data.FractureHitInfo;
-import com.walkercase.efm.util.EFMNBTHelper;
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -22,20 +18,15 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
-import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.registries.ForgeRegistries;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.UUID;
 
 @Mod.EventBusSubscriber(modid = EFMMain.MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.DEDICATED_SERVER)
-public class EFMAmmoExtensionSystem {
+public class ShootExtension {
 
     public static final HashMap<UUID, FractureHitInfo> playerFractureHit = new HashMap<UUID, FractureHitInfo>();
 

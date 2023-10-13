@@ -18,8 +18,18 @@
   "item.efm.shell_frac_ammo": "Fracturing Birdshot Shell",
 
   "item.efm.pistol_extended_mag": "Pistol Extended Magazine",
-  "item.efm.drum_mag": "Drum Magazine",
-  "item.efm.fast_mag": "Fast Magazine",
+  "item.efm.pistol_drum_mag": "Pistol Drum Magazine",
+  "item.efm.pistol_fast_mag": "Pistol Fast Magazine",
+
+  "item.efm.shotgun_extended_mag": "Shotgun Extended Magazine",
+  "item.efm.shotgun_drum_mag": "Shotgun Drum Magazine",
+
+  "item.efm.rifle_extended_mag": "Rifle Extended Magazine",
+  "item.efm.rifle_fast_mag": "Rifle Fast Magazine",
+
+  "item.efm.ar_extended_mag": "Assault Rifle Extended Magazine",
+  "item.efm.ar_drum_mag": "Assault Rifle Drum Magazine",
+  "item.efm.ar_fast_mag": "Assault Rifle Fast Magazine",
 
   "enchantment.efm.fracture": "Fracture"
 }

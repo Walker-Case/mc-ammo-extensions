@@ -33,19 +33,14 @@ public class GunMixin {
         for(int i=0;i<player.getInventory().getContainerSize();i++){
             ItemStack is = player.getInventory().getItem(i);
             if(is.getItem() instanceof Magazine magazine){
-                if(magazine.companionWeapon.get() == player.getMainHandItem().getItem()){
-                    callback.setReturnValue(new AmmoContext(is, player.isCreative() ? null : player.getInventory()));
-                    return;
-                }
-            }
-
-            if(is.getItem() instanceof EFMAmmoWrapper ammo){
-                //If equal
-                if(ammo.baseAmmo.compareTo(baseID) == 0){
-                    callback.setReturnValue(new AmmoContext(is, player.isCreative() ? null : player.getInventory()));
+                if(magazine.matchesWeapon(player.getMainHandItem().getItem())){
+                    //If empty, skip
+                    if(Magazine.getLoadedAmmo(is).length > 0)
+                        callback.setReturnValue(new AmmoContext(is, player.isCreative() ? null : player.getInventory()));
                     return;
                 }
             }
         }
+        callback.setReturnValue(new AmmoContext(ItemStack.EMPTY, player.isCreative() ? null : player.getInventory()));
     }
 }

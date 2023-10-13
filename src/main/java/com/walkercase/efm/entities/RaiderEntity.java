@@ -30,6 +30,7 @@ import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.RangedAttackMob;
 import com.mrcrayfish.guns.common.Gun;
 import net.minecraft.world.entity.monster.Skeleton;
+import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -53,16 +54,17 @@ public class RaiderEntity extends PathfinderMob implements RangedAttackMob {
     protected void registerGoals() {
         super.registerGoals();
         this.goalSelector.addGoal(0, new FloatGoal(this));
-        this.goalSelector.addGoal(8, new LookAtPlayerGoal(this, Player.class, 300.0F));
+        this.goalSelector.addGoal(8, new LookAtPlayerGoal(this, Player.class, 100.F));
         this.goalSelector.addGoal(8, new RandomLookAroundGoal(this));
         this.addBehaviourGoals();
     }
 
     protected void addBehaviourGoals() {
+        this.goalSelector.addGoal(3, new MoveTowardsTargetGoal(this, 3.0D, 100));
         this.targetSelector.addGoal(1, (new HurtByTargetGoal(this)).setAlertOthers(RaiderEntity.class));
         this.goalSelector.addGoal(2, new RangedGunGoal(this, 1.0D));
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, true));
-        this.goalSelector.addGoal(7, new WaterAvoidingRandomStrollGoal(this, 0.7D));
+        this.goalSelector.addGoal(7, new WaterAvoidingRandomStrollGoal(this, 1.0D));
     }
 
     @Override

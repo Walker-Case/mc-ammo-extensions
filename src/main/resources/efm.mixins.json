@@ -4,9 +4,10 @@
   "compatibilityLevel": "JAVA_16",
   "refmap": "efm.refmap.json",
   "mixins": [
-    "ReloadTrackerMixin",
+    "GunEnchantmentHelperMixin",
     "GunMixin",
-    "ItemStackMixin"
+    "ItemStackMixin",
+    "ReloadTrackerMixin"
   ],
   "client": [
   ],

@@ -1,0 +1,6 @@
+{
+    "parent": "efm:item/pistol_drum_mag",
+	"textures": {
+		"0": "efm:item/ar_drum_mag"
+	}
+}

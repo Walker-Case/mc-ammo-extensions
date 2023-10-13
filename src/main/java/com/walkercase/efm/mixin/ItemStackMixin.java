@@ -15,7 +15,6 @@ public class ItemStackMixin {
     public void getMaxDamage( CallbackInfoReturnable<Integer> callback) {
         ItemStack is = ((ItemStack)(Object)this);
         if(is != null && is.getItem() instanceof GunItem){
-            //TODO Verify working
             ItemStack magazine = Magazine.getCurrentMagazineForGun(is);
             if(magazine != null){
                 callback.setReturnValue(((Magazine)magazine.getItem()).size);

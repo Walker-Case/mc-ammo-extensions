@@ -69,7 +69,7 @@ public class LevelModEvents{
             lastTickRandomRaider = System.currentTimeMillis() + tickTimeRaider;
 
             for (Player player : event.level.players()) {
-                if(player == null)
+                if(player == null || player.isCreative())
                     continue;
                 RandomSource randomsource = player.getRandom();
                 RegistryObject<EntityType<RaiderEntity>> raiderEntity = EFMEntities.RAIDER_ENTITY;

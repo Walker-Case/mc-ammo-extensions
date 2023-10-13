@@ -1,5 +1,6 @@
 package com.walkercase.efm.event;
 
+import com.mrcrayfish.guns.item.GunItem;
 import com.walkercase.efm.EFMMain;
 import com.walkercase.efm.item.EFMAmmoWrapper;
 import com.walkercase.efm.item.Magazine;
@@ -23,9 +24,7 @@ public class MenuEvents {
         if(carried.getItem() instanceof EFMAmmoWrapper wrapper){
             if(inSlot.getItem() instanceof Magazine magazine){
                 //If magazine gun ammo and wrapper ammo are equal.
-                ResourceLocation magazineGunAmmo = magazine.companionWeapon.get().getGun().getProjectile().getItem();
-
-                if(magazineGunAmmo.compareTo(wrapper.baseAmmo) == 0){
+                if(magazine.matchesAmmo(wrapper.baseAmmo)){
 
                     //If the ammo can be placed in the magazine
                     if(Magazine.putBullet(event.getStackedOnItem(), event.getCarriedItem().getItem())){

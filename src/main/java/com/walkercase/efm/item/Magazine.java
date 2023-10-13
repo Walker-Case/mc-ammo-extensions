@@ -3,7 +3,6 @@ package com.walkercase.efm.item;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonParser;
 import com.mrcrayfish.guns.item.GunItem;
-import com.walkercase.efm.EFMMain;
 import com.walkercase.efm.util.EFMNBTHelper;
 import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;
@@ -19,21 +18,68 @@ import net.minecraftforge.registries.RegistryObject;
 import org.codehaus.plexus.util.StringUtils;
 
 import javax.annotation.Nullable;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
+import java.util.Objects;
 
 public class Magazine extends Item {
-    public final RegistryObject<GunItem> companionWeapon;
+    private final RegistryObject[] companionWeapons;
     public final int size;
-    public Magazine(RegistryObject<GunItem> companionWeapon, int size, Properties properties) {
+    public final EnchantmentWrapper[] enchantments;
+    public Magazine(RegistryObject[] companionWeapons, int size, EnchantmentWrapper[] enchantments, Properties properties) {
         super(properties.durability(size));
 
         this.size = size;
-        this.companionWeapon = companionWeapon;
+        this.companionWeapons = companionWeapons;
+        this.enchantments = enchantments;
+    }
+
+    /**
+     * Returns true if the provided gun matches the provided magazine.
+     * @param item GunItem
+     * @return true/false
+     */
+    public boolean matchesWeapon(Item item){
+        return matchesWeapon(ForgeRegistries.ITEMS.getKey(item));
+    }
+
+    /**
+     * Returns true if the provided gun matches the provided magazine.
+     * @param resourceLocation Gun
+     * @return true/false
+     */
+    public boolean matchesWeapon(ResourceLocation resourceLocation){
+        for(RegistryObject ro : companionWeapons){
+            if(ro.getId().compareTo(resourceLocation) == 0)
+                return true;
+        }
+        return false;
+    }
+
+    /**
+     * Returns true if the provided resourceLocation matches the magazine type.
+     * @param resourceLocation ResourceLocation
+     * @return true/false
+     */
+    public boolean matchesAmmo(ResourceLocation resourceLocation){
+        for(RegistryObject ro : companionWeapons){
+            GunItem gun = (GunItem)ro.get();
+            ResourceLocation a = gun.getGun().getProjectile().getItem();
+            if(a.compareTo(resourceLocation) == 0)
+                return true;
+        }
+        return false;
     }
 
     @Override
     public void appendHoverText(ItemStack is, @Nullable Level level, List<Component> list, TooltipFlag p_41424_) {
+        list.addAll(getTooltipAmmoTicker(is));
+    }
+
+    public static Collection<? extends Component> getTooltipAmmoTicker(ItemStack is){
         Item[] ammo = Magazine.getLoadedAmmo(is);
+        ArrayList<Component> list = new ArrayList<Component>();
         MutableComponent base = Component.empty();
         if(ammo.length > 0){
             for(int i=0;i<ammo.length;i++){
@@ -41,7 +87,7 @@ public class Magazine extends Item {
                 if(ammo[i] instanceof EFMAmmoWrapper wrapper){
                     formatting = wrapper.chatColor;
                 }
-                if(i % 20==0){
+                if(i % 40==0){
                     list.add(base);
                     base = Component.empty();
                 }
@@ -53,8 +99,27 @@ public class Magazine extends Item {
         }else{
             list.add(Component.literal("Empty"));
         }
+
+        return list;
     }
 
+    public boolean isBarVisible(ItemStack stack) {
+        return true;
+    }
+
+    public int getBarWidth(ItemStack stack) {
+        return (int)(13.0 * ((double)Magazine.getLoadedAmmo(stack).length / (double)this.size));
+    }
+
+    public int getBarColor(ItemStack stack) {
+        return (Integer) Objects.requireNonNull(ChatFormatting.YELLOW.getColor());
+    }
+
+    /**
+     * Returns an array of all of the loaded ammo.
+     * @param is ItemStack Magazine
+     * @return
+     */
     public static Item[] getLoadedAmmo(ItemStack is){
         JsonArray arr = getJsonLoadedAmmo(is);
         Item[] items = new Item[arr.size()];
@@ -64,6 +129,11 @@ public class Magazine extends Item {
         return items;
     }
 
+    /**
+     * Returns the top bullet in the magazine.
+     * @param is ItemStack Magazine
+     * @return
+     */
     public static Item getTopBullet(ItemStack is){
         JsonArray arr = getJsonLoadedAmmo(is);
         if(!arr.isEmpty()){
@@ -72,6 +142,12 @@ public class Magazine extends Item {
         return null;
     }
 
+    /**
+     * Put a bullet into the top of the magazine ItemStack.
+     * @param is ItemStack Magazine
+     * @param bullet Item Ammo
+     * @return true if successful
+     */
     public static boolean putBullet(ItemStack is, Item bullet){
         ResourceLocation key = ForgeRegistries.ITEMS.getKey(bullet);
 
@@ -85,6 +161,11 @@ public class Magazine extends Item {
         return false;
     }
 
+    /**
+     * Attempts to take the first bullet in the magazine and return it.
+     * @param is ItemStack Magazine
+     * @return Item or null if unable.
+     */
     public static Item takeTopBullet(ItemStack is){
         JsonArray arr = getJsonLoadedAmmo(is);
         if(!arr.isEmpty()){
@@ -97,8 +178,8 @@ public class Magazine extends Item {
 
     /**
      * Sets the current gun magazine and returns the old one if any existed.
-     * @param gun
-     * @param magazine
+     * @param gun ItemStack GunItem
+     * @param magazine ItemStack Magazine
      * @return
      */
     public static ItemStack setCurrentMagazine(ItemStack gun, ItemStack magazine){
@@ -111,8 +192,8 @@ public class Magazine extends Item {
 
     /**
      * Returns the current magazine stored in the gun.
-     * @param is
-     * @return
+     * @param is ItemStack GunItem
+     * @return ItemStack Magazine
      */
     public static ItemStack getCurrentMagazineForGun(ItemStack is){
         CompoundTag efm = EFMNBTHelper.getModMainTagForItemStack(is);
@@ -125,14 +206,19 @@ public class Magazine extends Item {
 
     /**
      * Updates the currently loaded ammo in the ItemStack nbt to the new JsonArray.
-     * @param is
-     * @param newArray
+     * @param is ItemStack Magazine
+     * @param newArray JsonArray from NBT Tag
      */
     private static void updateLoadedAmmo(ItemStack is, JsonArray newArray){
         CompoundTag efm = EFMNBTHelper.getModMainTagForItemStack(is);
         efm.putString("loaded-ammo", newArray.toString());
     }
 
+    /**
+     * Returns the raw JsonArray of the loaded-ammo NBT tag.
+     * @param is ItemStack Magazine
+     * @return
+     */
     private static JsonArray getJsonLoadedAmmo(ItemStack is){
         CompoundTag efm = EFMNBTHelper.getModMainTagForItemStack(is);
         String loadedAmmo = efm.getString("loaded-ammo");
