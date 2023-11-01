@@ -22,9 +22,6 @@ public class ClientEvents {
             if(is.getItem() instanceof GunItem){
                 ItemStack magazine = Magazine.getCurrentMagazineForGun(is);
                 if(magazine != null){
-                    event.getTooltipElements().remove(1);
-                    event.getTooltipElements().remove(2);
-                    event.getTooltipElements().remove(3);
 
                     Magazine.getTooltipAmmoTicker(magazine).forEach(x->{
                         event.getTooltipElements().add(2, Either.left(x));
