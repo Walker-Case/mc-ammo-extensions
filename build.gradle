@@ -15,8 +15,6 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 mixin {
     add sourceSets.main, "efm.refmap.json"
     config 'efm.mixins.json'
-    debug.verbose = true
-    debug.export = true
 }
 
 println "Java: ${System.getProperty 'java.version'}, JVM: ${System.getProperty 'java.vm.version'} (${System.getProperty 'java.vendor'}), Arch: ${System.getProperty 'os.arch'}"
@@ -59,13 +57,13 @@ minecraft {
             // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
             property 'forge.enabledGameTestNamespaces', 'efm'
 
-            property 'mixin.env.disableRefMap', 'true'
             property 'mixin.env.remapRefMap', 'true'
             property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
 
             mods {
                 efm {
                     source sourceSets.main
+                    ext.refMap = "efm.refmap.json"
                 }
             }
         }
@@ -79,7 +77,6 @@ minecraft {
 
             property 'forge.enabledGameTestNamespaces', 'efm'
 
-            property 'mixin.env.disableRefMap', 'true'
             property 'mixin.env.remapRefMap', 'true'
             property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
 
@@ -87,6 +84,7 @@ minecraft {
             mods {
                 efm {
                     source sourceSets.main
+                    ext.refMap = "efm.refmap.json"
                 }
             }
         }
@@ -106,6 +104,7 @@ minecraft {
             mods {
                 efm {
                     source sourceSets.main
+                    ext.refMap = "efm.refmap.json"
                 }
             }
         }
@@ -124,6 +123,7 @@ minecraft {
             mods {
                 efm {
                     source sourceSets.main
+                    ext.refMap = "efm.refmap.json"
                 }
             }
         }
@@ -178,7 +178,9 @@ jar {
                 "Implementation-Version"  : project.jar.archiveVersion,
                 "Implementation-Vendor"   : "efm",
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
-                "MixinConfigs": "efm.mixins.json"
+                'TweakClass': 'org.spongepowered.asm.launch.MixinTweaker',
+                "MixinConfigs": "efm.mixins.json",
+                'FMLCorePluginContainsFMLMod': 'true',
         ])
     }
 }

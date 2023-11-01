@@ -3,6 +3,7 @@
   "package": "com.walkercase.efm.mixin",
   "compatibilityLevel": "JAVA_16",
   "refmap": "efm.refmap.json",
+  "plugin": "com.walkercase.efm.mixin.MixinPlugin",
   "mixins": [
     "GunEnchantmentHelperMixin",
     "GunMixin",

@@ -11,7 +11,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(ItemStack.class)
 public class ItemStackMixin {
 
-    @Inject(method = "getMaxDamage", at = @At(value = "HEAD"), remap = false, cancellable = true)
+    //https://fabricmc.net/wiki/tutorial:mixin_injects
+    @Inject(method = "getMaxDamage", at = @At(value = "HEAD", target = "Lnet/minecraft/world/item/ItemStack;getMaxDamage(I)V"), cancellable = true)
     public void getMaxDamage( CallbackInfoReturnable<Integer> callback) {
         ItemStack is = ((ItemStack)(Object)this);
         if(is != null && is.getItem() instanceof GunItem){
