@@ -1,0 +1,6 @@
+{
+    "parent": "ae:item/pistol_extended_mag",
+	"textures": {
+		"0": "ae:item/rifle_fast_mag"
+	}
+}

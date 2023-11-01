@@ -1,0 +1,46 @@
+{
+  "item.ae.basic_ap_ammo": "Basic Armor Penetrating Bullet",
+  "item.ae.basic_bt_ammo": "Basic Explosive Bullet",
+  "item.ae.basic_fmj_ammo": "Basic Full Metal Bullet",
+  "item.ae.basic_inc_ammo": "Basic Incendiary Bullet",
+  "item.ae.basic_frac_ammo" : "Basic Fracturing Bullet",
+
+  "item.ae.advanced_ap_ammo": "Advanced Armor Penetrating Bullet",
+  "item.ae.advanced_bt_ammo": "Advanced Explosive Bullet",
+  "item.ae.advanced_fmj_ammo": "Advanced Full Metal Bullet",
+  "item.ae.advanced_inc_ammo": "Advanced Incendiary Bullet",
+  "item.ae.advanced_frac_ammo": "Advanced Fracturing Bullet",
+
+  "item.ae.shell_buck_ammo": "Buckshot Shell",
+  "item.ae.shell_db_ammo": "Explosive Buckshot Shell",
+  "item.ae.shell_fifty_ammo": ".50cal Ball Shell",
+  "item.ae.shell_inc_ammo": "Incendiary Buckshot Shell",
+  "item.ae.shell_frac_ammo": "Fracturing Birdshot Shell",
+
+  "item.ae.pistol_standard_mag": "Pistol Standard Magazine",
+  "item.ae.pistol_extended_mag": "Pistol Extended Magazine",
+  "item.ae.pistol_drum_mag": "Pistol Drum Magazine",
+  "item.ae.pistol_fast_mag": "Pistol Fast Magazine",
+
+  "item.ae.shotgun_standard_mag": "Shotgun Standard Magazine",
+  "item.ae.shotgun_extended_mag": "Shotgun Extended Magazine",
+  "item.ae.shotgun_drum_mag": "Shotgun Drum Magazine",
+
+  "item.ae.rifle_standard_mag": "Rifle Standard Magazine",
+  "item.ae.rifle_extended_mag": "Rifle Extended Magazine",
+  "item.ae.rifle_fast_mag": "Rifle Fast Magazine",
+
+  "item.ae.heavy_rifle_standard_mag": "Heavy Rifle Standard Magazine",
+  "item.ae.heavy_rifle_extended_mag": "Heavy Rifle Extended Magazine",
+  "item.ae.heavy_rifle_fast_mag": "Heavy Rifle Fast Magazine",
+
+  "item.ae.minigun_standard_mag": "Minigun Standard Magazine",
+  "item.ae.minigun_extended_mag": "Minigun Extended Magazine",
+
+  "item.ae.ar_standard_mag":"Assault Rifle Standard Magazine",
+  "item.ae.ar_extended_mag": "Assault Rifle Extended Magazine",
+  "item.ae.ar_drum_mag": "Assault Rifle Drum Magazine",
+  "item.ae.ar_fast_mag": "Assault Rifle Fast Magazine",
+
+  "enchantment.ae.fracture": "Fracture"
+}

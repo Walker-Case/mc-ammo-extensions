@@ -1,0 +1,6 @@
+{
+    "parent": "ae:item/minigun_standard_mag",
+	"textures": {
+		"0": "ae:item/minigun_extended_mag"
+	}
+}

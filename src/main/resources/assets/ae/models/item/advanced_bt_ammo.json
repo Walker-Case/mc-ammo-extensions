@@ -1,0 +1,7 @@
+{
+    "parent": "cgm:item/advanced_bullet",
+	"textures": {
+		"1": "ae:item/advanced_bt_ammo",
+		"particle": "cgm:item/advanced_bullet"
+	}
+}
