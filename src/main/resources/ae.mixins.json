@@ -1,0 +1,19 @@
+{
+  "required": true,
+  "package": "com.walkercase.ae.mixin",
+  "compatibilityLevel": "JAVA_16",
+  "refmap": "efm.refmap.json",
+  "plugin": "com.walkercase.ae.mixin.MixinPlugin",
+  "mixins": [
+    "GunEnchantmentHelperMixin",
+    "GunMixin",
+    "ItemStackMixin",
+    "ReloadTrackerMixin"
+  ],
+  "client": [
+  ],
+  "minVersion": "0.8",
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "cgm:workbench",
+  "materials": [
+    {
+      "count": 1,
+      "item": "ae:ar_standard_mag"
+    },
+    {
+      "count": 50,
+      "item": "minecraft:iron_ingot"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "item": "ae:ar_drum_mag"
+  }
+}

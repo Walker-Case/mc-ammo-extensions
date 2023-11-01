@@ -1,0 +1,17 @@
+{
+  "type": "cgm:workbench",
+  "materials": [
+    {
+      "count": 10,
+      "item": "ae:basic_fmj_ammo"
+    },
+    {
+      "count": 1,
+      "item": "minecraft:obsidian"
+    }
+  ],
+  "result": {
+    "count": 10,
+    "item": "ae:basic_ap_ammo"
+  }
+}

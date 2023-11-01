@@ -1,0 +1,13 @@
+{
+  "type": "cgm:workbench",
+  "materials": [
+    {
+      "count": 10,
+      "item": "minecraft:iron_ingot"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "item": "ae:pistol_standard_mag"
+  }
+}

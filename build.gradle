@@ -6,15 +6,15 @@ plugins {
 }
 
 version = '1.0'
-group = 'com.cyphereion.efm' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = 'efm'
+group = 'com.cyphereion.ae' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = 'ae'
 
 // Mojang ships Java 17 to end users in 1.18+, so your mod should target Java 17.
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
 mixin {
-    add sourceSets.main, "efm.refmap.json"
-    config 'efm.mixins.json'
+    add sourceSets.main, "ae.refmap.json"
+    config 'ae.mixins.json'
 }
 
 println "Java: ${System.getProperty 'java.version'}, JVM: ${System.getProperty 'java.vm.version'} (${System.getProperty 'java.vendor'}), Arch: ${System.getProperty 'os.arch'}"
@@ -55,15 +55,15 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
-            property 'forge.enabledGameTestNamespaces', 'efm'
+            property 'forge.enabledGameTestNamespaces', 'ae'
 
             property 'mixin.env.remapRefMap', 'true'
             property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
 
             mods {
-                efm {
+                ae {
                     source sourceSets.main
-                    ext.refMap = "efm.refmap.json"
+                    ext.refMap = "ae.refmap.json"
                 }
             }
         }
@@ -75,16 +75,16 @@ minecraft {
 
             property 'forge.logging.console.level', 'debug'
 
-            property 'forge.enabledGameTestNamespaces', 'efm'
+            property 'forge.enabledGameTestNamespaces', 'ae'
 
             property 'mixin.env.remapRefMap', 'true'
             property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
 
-            arg '-mixin.config=efm.mixins.json'
+            arg '-mixin.config=ae.mixins.json'
             mods {
-                efm {
+                ae {
                     source sourceSets.main
-                    ext.refMap = "efm.refmap.json"
+                    ext.refMap = "ae.refmap.json"
                 }
             }
         }
@@ -99,12 +99,13 @@ minecraft {
 
             property 'forge.logging.console.level', 'debug'
 
-            property 'forge.enabledGameTestNamespaces', 'efm'
+            property 'forge.enabledGameTestNamespaces', 'ae'
 
             mods {
-                efm {
+                ae {
                     source sourceSets.main
-                    ext.refMap = "efm.refmap.json"
+                    ext.refMap = "ae.refmap.json"
+                    ext.refMap = "ae.refmap.json"
                 }
             }
         }
@@ -117,13 +118,13 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
-            args '--mod', 'efm', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+            args '--mod', 'ae', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
 
-            arg '-mixin.config=efm.mixins.json'
+            arg '-mixin.config=ae.mixins.json'
             mods {
-                efm {
+                ae {
                     source sourceSets.main
-                    ext.refMap = "efm.refmap.json"
+                    ext.refMap = "ae.refmap.json"
                 }
             }
         }
@@ -171,15 +172,15 @@ dependencies {
 jar {
     manifest {
         attributes([
-                "Specification-Title"     : "Escape From Minecraftia",
-                "Specification-Vendor"    : "efm",
+                "Specification-Title"     : "Ammo Extensions",
+                "Specification-Vendor"    : "ae",
                 "Specification-Version"   : "1", // We are version 1 of ourselves
                 "Implementation-Title"    : project.name,
                 "Implementation-Version"  : project.jar.archiveVersion,
-                "Implementation-Vendor"   : "efm",
+                "Implementation-Vendor"   : "ae",
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
                 'TweakClass': 'org.spongepowered.asm.launch.MixinTweaker',
-                "MixinConfigs": "efm.mixins.json",
+                "MixinConfigs": "ae.mixins.json",
                 'FMLCorePluginContainsFMLMod': 'true',
         ])
     }

@@ -1,7 +1,0 @@
-{
-    "parent": "cgm:item/shell",
-	"textures": {
-		"1": "efm:item/shell_buck_ammo",
-		"particle": "cgm:item/shell"
-	}
-}

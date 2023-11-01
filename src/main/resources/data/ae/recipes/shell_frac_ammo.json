@@ -1,0 +1,17 @@
+{
+  "type": "cgm:workbench",
+  "materials": [
+    {
+      "count": 10,
+      "item": "ae:shell_buck_ammo"
+    },
+    {
+      "count": 1,
+      "item": "minecraft:quartz"
+    }
+  ],
+  "result": {
+    "count": 10,
+    "item": "ae:shell_frac_ammo"
+  }
+}

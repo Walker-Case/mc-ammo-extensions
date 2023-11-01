@@ -1,6 +1,0 @@
-{
-    "parent": "efm:item/pistol_extended_mag",
-	"textures": {
-		"0": "efm:item/ar_fast_mag"
-	}
-}

@@ -1,0 +1,21 @@
+{
+  "type": "cgm:workbench",
+  "materials": [
+    {
+      "count": 64,
+      "item": "minecraft:iron_ingot"
+    },
+    {
+      "count": 32,
+      "item": "minecraft:copper_ingot"
+    },
+    {
+      "count": 10,
+      "item": "minecraft:obsidian"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "item": "ae:minigun_standard_mag"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "cgm:workbench",
+  "materials": [
+    {
+      "count": 10,
+      "item": "ae:advanced_inc_ammo"
+    },
+    {
+      "count": 1,
+      "item": "minecraft:obsidian"
+    }
+  ],
+  "result": {
+    "count": 10,
+    "item": "ae:advanced_bt_ammo"
+  }
+}

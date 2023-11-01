@@ -1,0 +1,17 @@
+{
+  "type": "cgm:workbench",
+  "materials": [
+    {
+      "count": 10,
+      "item": "cgm:basic_bullet"
+    },
+    {
+      "count": 1,
+      "item": "minecraft:iron_ingot"
+    }
+  ],
+  "result": {
+    "count": 10,
+    "item": "ae:basic_fmj_ammo"
+  }
+}

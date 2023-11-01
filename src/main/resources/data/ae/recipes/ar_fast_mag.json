@@ -1,0 +1,17 @@
+{
+  "type": "cgm:workbench",
+  "materials": [
+    {
+      "count": 1,
+      "item": "ae:ar_standard_mag"
+    },
+    {
+      "count": 1,
+      "item": "minecraft:blaze_rod"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "item": "ae:ar_fast_mag"
+  }
+}
