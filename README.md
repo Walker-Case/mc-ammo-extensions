@@ -40,6 +40,8 @@ Different ammo types can be loaded into the same magazine to provide a range of 
 |![image](https://github.com/Walker-Case/mc-ammo-extensions/assets/5025293/a5a6eeb1-a23d-44fa-88b8-b5f65ba9c356)| Drum Magazine| Holds significantly more ammo but also reloads significantly slower.|
 
 
+## License
+Ammo Extensions © 2023 by Walker Case is licensed under CC BY-SA 4.0. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/
 
 
 
