@@ -2,7 +2,7 @@
   "required": true,
   "package": "com.walkercase.ae.mixin",
   "compatibilityLevel": "JAVA_16",
-  "refmap": "efm.refmap.json",
+  "refmap": "ae.refmap.json",
   "plugin": "com.walkercase.ae.mixin.MixinPlugin",
   "mixins": [
     "GunEnchantmentHelperMixin",
